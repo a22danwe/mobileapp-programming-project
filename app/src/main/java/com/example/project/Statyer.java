@@ -2,13 +2,13 @@ package com.example.project;
 
 import android.util.Log;
 
-class Mountain {
+class Statyer {
 
     private String name;
     private String location;
     private int size;
 
-    public Mountain(String name, String location, int size) {
+    public statyer(String name, String location, int size) {
 
         this.name = name;
         this.location = location;
@@ -16,7 +16,7 @@ class Mountain {
     }
 
     public String toString() {
-        String tmp = name + " " + location + " " + size;
+        String tmp = name + " " + size + " " + location ;
 
         return tmp;
     }
