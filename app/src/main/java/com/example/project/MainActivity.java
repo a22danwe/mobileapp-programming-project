@@ -1,37 +1,59 @@
 package com.example.project;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.EventLogTags;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.util.Log;
 
-class MainActivity extends AppCompatActivity {
-    TextView Description;
-    Button pressButton;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
+@SuppressWarnings("FieldCanBeLocal")
+class ShowActivity2 extends AppCompatActivity implements JsonTask.JsonTaskListener {
+
+    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a22danwe";
+    private final String JSON_FILE = "staty.json";
+
+    private ArrayList<Statyer> staty = new ArrayList<>();
+    private RecyclerViewAdapter Adapter;
+    private RecyclerView.ViewHolder ViewHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        pressButton = findViewById(R.id.pressButton);
-        Description = findViewById(R.id.Description);
 
-        pressButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity .this, ShowActivity2.class);
-
-                startActivity(intent);
+        new JsonFile(this, this).execute(JSON_FILE);
 
 
-
-            }
-        });
     }
+
+    @Override
+    public void onPostExecute(String json) {
+        Log.d("MainActivity", json);
+
+        Gson gson = new Gson();
+
+        Type type = new TypeToken<List<Statyer>>() {}.getType();
+
+        ArrayList<Statyer> mountain = gson.fromJson(json, type);
+
+        Adapter= new RecyclerViewAdapter( this, staty);
+
+        RecyclerView view = findViewById(R.id.MyView);
+        view.setLayoutManager(new LinearLayoutManager(this));
+        view.setAdapter(Adapter);
+
+        Adapter.notifyDataSetChanged();
+    }
+
+
+
+
 }
