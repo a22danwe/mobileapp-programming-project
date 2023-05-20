@@ -7,7 +7,7 @@
     tools:context="MainActivity">
 
     <TextView
-        android:id="@+id/Beskrivning"
+        android:id="@+id/Description"
         android:layout_width="381dp"
         android:layout_height="304dp"
         android:text="lorem ipsum"
