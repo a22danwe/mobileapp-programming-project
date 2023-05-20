@@ -14,11 +14,11 @@ import java.util.List;
 
 class RecyclerViewAdapter  extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private List<Statyer> staty;
+    private List<Statyer> statue;
     private LayoutInflater layoutInflater;
 
     RecyclerViewAdapter(Context context,List<Statyer> mountain) {
-        this.staty = staty;
+        this.statue = statue;
         this.layoutInflater=LayoutInflater.from(context);
     }
 
@@ -31,12 +31,12 @@ class RecyclerViewAdapter  extends RecyclerView.Adapter<RecyclerViewAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.title.setText(staty.get(position).toString());
+        holder.title.setText(statue.get(position).toString());
     }
 
     @Override
     public int getItemCount() {
-        return staty.size();
+        return statue.size();
     }
 
 

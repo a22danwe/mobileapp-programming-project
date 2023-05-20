@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("FieldCanBeLocal")
-class ShowActivity2 extends AppCompatActivity implements JsonTask.JsonTaskListener {
+class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a22danwe";
-    private final String JSON_FILE = "staty.json";
+    private final String JSON_FILE = "statue.json";
 
-    private ArrayList<Statyer> staty = new ArrayList<>();
+    private ArrayList<Statyer> statue = new ArrayList<>();
     private RecyclerViewAdapter Adapter;
     private RecyclerView.ViewHolder ViewHolder;
 
@@ -44,7 +44,7 @@ class ShowActivity2 extends AppCompatActivity implements JsonTask.JsonTaskListen
 
         ArrayList<Statyer> mountain = gson.fromJson(json, type);
 
-        Adapter= new RecyclerViewAdapter( this, staty);
+        Adapter= new RecyclerViewAdapter( this, statue);
 
         RecyclerView view = findViewById(R.id.MyView);
         view.setLayoutManager(new LinearLayoutManager(this));
