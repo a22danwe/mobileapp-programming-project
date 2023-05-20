@@ -44,7 +44,7 @@ class ShowActivity2 extends AppCompatActivity implements JsonTask.JsonTaskListen
 
         ArrayList<Statyer> mountain = gson.fromJson(json, type);
 
-        Adapter= new RecyclerViewAdapter( this, Statyer);
+        Adapter= new RecyclerViewAdapter( this, staty);
 
         RecyclerView view = findViewById(R.id.MyView);
         view.setLayoutManager(new LinearLayoutManager(this));

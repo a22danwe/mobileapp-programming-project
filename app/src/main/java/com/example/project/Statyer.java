@@ -8,7 +8,7 @@ class Statyer {
     private String location;
     private int size;
 
-    public statyer(String name, String location, int size) {
+    public Statyer(String name, String location, int size) {
 
         this.name = name;
         this.location = location;
