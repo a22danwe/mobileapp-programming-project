@@ -1,7 +1,10 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,7 +26,7 @@ class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListene
     private ArrayList<Statyer> statue = new ArrayList<>();
     private RecyclerViewAdapter Adapter;
     private RecyclerView.ViewHolder ViewHolder;
-
+    Button pressButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,18 @@ class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListene
 
         new JsonFile(this, this).execute(JSON_FILE);
 
+            pressButton = findViewById(R.id.button);
+            pressButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+
+                    startActivity(intent);
+
+
+
+                }
+            });
 
     }
 
@@ -42,7 +57,7 @@ class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListene
 
         Type type = new TypeToken<List<Statyer>>() {}.getType();
 
-        ArrayList<Statyer> mountain = gson.fromJson(json, type);
+        ArrayList<Statyer> statue = gson.fromJson(json, type);
 
         Adapter= new RecyclerViewAdapter( this, statue);
 
