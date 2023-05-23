@@ -17,8 +17,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("FieldCanBeLocal")
-class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
+
+public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a22danwe";
     private final String JSON_FILE = "statue.json";

@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 class RecyclerViewAdapter  extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
@@ -17,7 +17,7 @@ class RecyclerViewAdapter  extends RecyclerView.Adapter<RecyclerViewAdapter.View
     private List<Statyer> statue;
     private LayoutInflater layoutInflater;
 
-    RecyclerViewAdapter(Context context,List<Statyer> mountain) {
+    RecyclerViewAdapter(Context context,List<Statyer> statue) {
         this.statue = statue;
         this.layoutInflater=LayoutInflater.from(context);
     }
