@@ -8,12 +8,17 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="364dp"
-        android:layout_height="217dp"
-        android:text="TextView"
+        android:layout_width="366dp"
+        android:layout_height="299dp"
+        android:background="#ADD8E6"
+        android:padding="20dp"
+        android:text="Denna app är gjord för de personer som älskar kultur och historia. Appen har en lista över de största stayerna i världen och vart de befinner sig. Gillar du att resa eller bara är intresserad av monument så är denna appen för dig!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.359"
+        android:textSize="20dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
