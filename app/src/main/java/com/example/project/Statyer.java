@@ -16,7 +16,7 @@ class Statyer {
     }
 
     public String toString() {
-        String tmp = name + " " + location + " " +  size ;
+        String tmp = "Name: "+name + " Location: " + location + " Size: " +  size +" Meters" ;
 
         return tmp;
     }
